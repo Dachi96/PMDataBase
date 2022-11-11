@@ -51,6 +51,78 @@ namespace PromptManager
             }
             addCompornents = 0;
 
+            // Attireテーブル
+            foreach (var aTbl in MyDataBase.AttireTbl)
+            {
+                CheckBox cbx = new CheckBox();
+                cbx.Name = aTbl.name_e;
+                cbx.Text = aTbl.name_j;
+
+                // サイズと配置
+                cbx.Size = new Size(100, 20);
+                cbx.Location = new Point(110, 32 + addCompornents * 22);
+
+                // フォームへの追加
+                this.Controls.Add(cbx);
+
+                addCompornents++;
+            }
+            addCompornents = 0;
+
+            // Emotionテーブル
+            foreach (var emTbl in MyDataBase.EmotionTbl)
+            {
+                CheckBox cbx = new CheckBox();
+                cbx.Name = emTbl.name_e;
+                cbx.Text = emTbl.name_j;
+
+                // サイズと配置
+                cbx.Size = new Size(100, 20);
+                cbx.Location = new Point(210, 32 + addCompornents * 22);
+
+                // フォームへの追加
+                this.Controls.Add(cbx);
+
+                addCompornents++;
+            }
+            addCompornents = 0;
+
+            // Effectテーブル
+            foreach (var efTbl in MyDataBase.EffectTbl)
+            {
+                CheckBox cbx = new CheckBox();
+                cbx.Name = efTbl.name_e;
+                cbx.Text = efTbl.name_j;
+
+                // サイズと配置
+                cbx.Size = new Size(100, 20);
+                cbx.Location = new Point(310, 32 + addCompornents * 22);
+
+                // フォームへの追加
+                this.Controls.Add(cbx);
+
+                addCompornents++;
+            }
+            addCompornents = 0;
+
+            // Positionテーブル
+            foreach (var pTbl in MyDataBase.PositionTbl)
+            {
+                CheckBox cbx = new CheckBox();
+                cbx.Name = pTbl.name_e;
+                cbx.Text = pTbl.name_j;
+
+                // サイズと配置
+                cbx.Size = new Size(100, 20);
+                cbx.Location = new Point(410, 32 + addCompornents * 22);
+
+                // フォームへの追加
+                this.Controls.Add(cbx);
+
+                addCompornents++;
+            }
+            addCompornents = 0;
+
             // Backgrondテーブル
             foreach (var bTbl in MyDataBase.BackgroundTbl)
             {
@@ -60,7 +132,7 @@ namespace PromptManager
 
                 // サイズと配置
                 cbx.Size = new Size(100, 20);
-                cbx.Location = new Point(110, 32 + addCompornents * 22);
+                cbx.Location = new Point(510, 32 + addCompornents * 22);
 
                 // フォームへの追加
                 this.Controls.Add(cbx);
@@ -92,6 +164,59 @@ namespace PromptManager
                     sb.Append(",");
                 }
             }
+
+            // Attireテーブル
+            foreach (var cTbl in MyDataBase.AttireTbl)
+            {
+                Control[] cmpnntCtls = this.Controls.Find(cTbl.name_e, false);
+
+                CheckBox cbx = (CheckBox)cmpnntCtls[0];
+                if (cbx.Checked)
+                {
+                    sb.Append(cTbl.name_e);
+                    sb.Append(",");
+                }
+            }
+
+            // Emotionテーブル
+            foreach (var cTbl in MyDataBase.EmotionTbl)
+            {
+                Control[] cmpnntCtls = this.Controls.Find(cTbl.name_e, false);
+
+                CheckBox cbx = (CheckBox)cmpnntCtls[0];
+                if (cbx.Checked)
+                {
+                    sb.Append(cTbl.name_e);
+                    sb.Append(",");
+                }
+            }
+
+            // Effectテーブル
+            foreach (var cTbl in MyDataBase.EffectTbl)
+            {
+                Control[] cmpnntCtls = this.Controls.Find(cTbl.name_e, false);
+
+                CheckBox cbx = (CheckBox)cmpnntCtls[0];
+                if (cbx.Checked)
+                {
+                    sb.Append(cTbl.name_e);
+                    sb.Append(",");
+                }
+            }
+
+            // Positionテーブル
+            foreach (var cTbl in MyDataBase.PositionTbl)
+            {
+                Control[] cmpnntCtls = this.Controls.Find(cTbl.name_e, false);
+
+                CheckBox cbx = (CheckBox)cmpnntCtls[0];
+                if (cbx.Checked)
+                {
+                    sb.Append(cTbl.name_e);
+                    sb.Append(",");
+                }
+            }
+
             // Backgrondテーブル
             foreach (var bTbl in MyDataBase.BackgroundTbl)
             {
